@@ -8,7 +8,7 @@ function App() {
   const [productList, setProductList] = useState(importedJsonData);
 
   const searchByText = (val) =>{
-    let filteredProducts = productList.filter(item =>{
+    let filteredProducts = importedJsonData.filter(item =>{
       if(val === '') return item;
       else if(item.name.toLowerCase().includes(val.toLowerCase())) return item;
     }) 
