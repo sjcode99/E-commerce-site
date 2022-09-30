@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import HeaderComponent from './Components/HeaderComponent/HeaderComponent';
+import ProductListComponent from './Components/ProductListComponent/ProductListComponent';
+import importedJsonData from "./products.json";
+import { useState } from 'react';
 
 function App() {
+  const [productList, setProductList] = useState(importedJsonData);
+
+  const searchByText = (val) =>{
+    let filteredProducts = productList.filter(item =>{
+      if(val === '') return item;
+      else if(item.name.toLowerCase().includes(val.toLowerCase())) return item;
+    }) 
+    setProductList(filteredProducts)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App home">
+      <h1> Internship test app</h1>
+      <HeaderComponent handleSearch={searchByText}/>
+      <ProductListComponent products= {productList}  />
     </div>
   );
 }
