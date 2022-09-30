@@ -1,0 +1,12 @@
+.dropdown {
+    border: 2px solid gray;
+    margin-right: 5px;
+  }
+.toolbar{
+    display: flex;
+    align-items: center;
+}
+.actions{
+    position: absolute;
+    right: 0;
+}
