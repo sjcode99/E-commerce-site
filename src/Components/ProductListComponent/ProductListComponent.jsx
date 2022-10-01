@@ -6,7 +6,7 @@ function ProductListComponent({ products}) {
   return (
     <>
       <div className='container'>
-        <table className="table table-hover">
+        <table className="table table-hover list-table">
           <thead>
             <tr>
               <th scope="col">#</th>

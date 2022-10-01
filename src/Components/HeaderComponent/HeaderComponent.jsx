@@ -1,5 +1,6 @@
 import React from "react";
 import "./HeaderComponent.css";
+import {Link} from "react-router-dom";
 
 function HeaderComponent({ handleSearch, importedJsonData }) {
   const uniqueCategoryVal = [
@@ -90,7 +91,7 @@ function HeaderComponent({ handleSearch, importedJsonData }) {
 
             {/* reset button */}
             <div className="button reset">
-              
+
               <button
                 type="button"
                 className="btn btn-light"
@@ -98,9 +99,9 @@ function HeaderComponent({ handleSearch, importedJsonData }) {
                 onClick={(e) => handleSearch("")}
               >
                 <i
-                className="bi bi-arrow-counterclockwise"
-                style={{ color: "#0834bd" }}
-              ></i>
+                  className="bi bi-arrow-counterclockwise"
+                  style={{ color: "#0834bd" }}
+                ></i>
                 Reset
               </button>
             </div>
@@ -122,11 +123,16 @@ function HeaderComponent({ handleSearch, importedJsonData }) {
               {/* add to cart button */}
               <button
                 type="button"
-                className="btn btn-primary"
-                style={{ padding: "2px", borderRadius: "0", width: "108px", margin: "15px" }}
+                className="btn btn-primary action-buttons"
+                
               >
                 Add To Cart
               </button>
+                <Link to="/cart">
+              <button  type="button" className="btn btn-primary  action-buttons">
+                Go to Cart
+              </button>
+              </Link>
             </div>
             {/* <span class="navbar-brand mb-0 h1">Navbar</span> */}
           </div>

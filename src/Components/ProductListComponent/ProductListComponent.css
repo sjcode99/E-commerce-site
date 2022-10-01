@@ -8,3 +8,6 @@
     align-items: center;
     justify-content: space-around;
 }
+.list-table{
+    vertical-align: 0;
+}
