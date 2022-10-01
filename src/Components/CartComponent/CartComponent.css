@@ -1,0 +1,47 @@
+.cartBox{
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: space-evenly; */
+    margin-top: 3rem;
+}
+.cart-table{
+    width: 66%;
+    text-align: center;
+    vertical-align: 0;
+}
+.container .card{
+    width: 30%;
+    height: 15rem;
+}
+.card-heading{
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px 0 25px 0;
+}
+.card-subtotal{
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+}
+.card-total{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600px;
+}
+.checkout{
+    width: 85%;
+    border-radius: 20px;
+}
+.quantity-input{
+    display: block;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    width: 75px;
+    padding: 2px;
+}
+.quantity-value{
+    margin: 0 11px;
+}
+.qty{
+    padding:  0.5rem 1.5rem !important;
+}
