@@ -2,7 +2,7 @@ import React from 'react';
 import "./ProductListComponent.css";
 
 function ProductListComponent({ products}) {
-  console.log(products);
+  // console.log(products);
   return (
     <>
       <div className='container'>
@@ -26,7 +26,7 @@ function ProductListComponent({ products}) {
                 <td> <img width="50" height="50" src={item.image}  /> </td>
                 <td>{item.name}</td>
                 <td>{item.color}</td>
-                <td>{item.count > 0 ? <i class="bi bi-emoji-smile-fill"></i> : <i class="bi bi-emoji-frown-fill"></i>}</td>
+                <td>{item.count > 0 ? <i className="bi bi-emoji-smile-fill"></i> : <i className="bi bi-emoji-frown-fill"></i>}</td>
                 <td>{item.price}</td>
                 <td style={{width: '200px'}}>
                   <div className="buy-actions">

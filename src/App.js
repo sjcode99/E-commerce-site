@@ -7,18 +7,21 @@ import { useState } from 'react';
 function App() {
   const [productList, setProductList] = useState(importedJsonData);
 
-  const searchByText = (val) =>{
-    let filteredProducts = importedJsonData.filter(item =>{
+  const searchByText = (val, text) =>{
+    // console.log(text);
+
+    let filteredProducts = importedJsonData.filter(item => {
       if(val === '') return item;
-      else if(item.name.toLowerCase().includes(val.toLowerCase())) return item;
+      else if(item[text].toLowerCase().includes(val.toLowerCase())) return item;
     }) 
     setProductList(filteredProducts)
   }
 
+  // console.log(importedJsonData);
   return (
     <div className="App home">
       <h1> Internship test app</h1>
-      <HeaderComponent handleSearch={searchByText}/>
+      <HeaderComponent handleSearch={searchByText} importedJsonData= {importedJsonData} />
       <ProductListComponent products= {productList}  />
     </div>
   );

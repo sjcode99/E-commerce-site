@@ -7,6 +7,14 @@
     align-items: center;
 }
 .actions{
+    display: flex;
+    align-items:  center;
     position: absolute;
     right: 0;
+}
+.reset{
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
 }

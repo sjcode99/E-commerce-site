@@ -1,45 +1,67 @@
-import React, { useState } from "react";
-import "./HeaderComponent.css"
+import React from "react";
+import "./HeaderComponent.css";
 
-function HeaderComponent({handleSearch}) {
+function HeaderComponent({ handleSearch, importedJsonData }) {
+  const uniqueCategoryVal = [
+    ...new Set(importedJsonData.map((value) => value.category)),
+  ];
+  const uniqueSizeVal = [
+    ...new Set(importedJsonData.map((value) => value.size)),
+  ];
+  // console.log(uniqueVal);
   return (
     <>
       <div className="container">
         <nav className="navbar bg-light">
           <div className="toolbar w-100">
-            
             {/* categories */}
-            <div className="dropdown category">
-              <button
-                className="btn dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+            <div className="dropdown category" style={{ width: "130px" }}>
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                defaultValue={"categories"}
+                onChange={(e) => {
+                  // console.log(e.target.value);
+                  if (e.target.value === "categories") {
+                    handleSearch("");
+                  } else {
+                    handleSearch(e.target.value, "category");
+                  }
+                }}
               >
-                Hoodies
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <button className="dropdown-item" type="button">
-                    Action
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" type="button">
-                    Another action
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" type="button">
-                    Something else here
-                  </button>
-                </li>
-              </ul>
+                <option value={"categories"}>Categories</option>
+                {uniqueCategoryVal.map((item, i) => (
+                  <option key={i + 1} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* size */}
             <div className="dropdown size">
-              <button
+              <select
+                className="form-select"
+                aria-label="Default select example"
+                defaultValue={"size"}
+                onChange={(e) => {
+                  // console.log(e.target.value);
+                  if (e.target.value === "size") {
+                    handleSearch("");
+                  } else {
+                    handleSearch(e.target.value, "size");
+                  }
+                }}
+              >
+                <option value={"size"}>Size</option>
+                {uniqueSizeVal.map((item, i) => (
+                  <option key={i + 1} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+
+              {/* <button
                 className="btn dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
@@ -63,23 +85,48 @@ function HeaderComponent({handleSearch}) {
                     Something else here
                   </button>
                 </li>
-              </ul>
+              </ul> */}
             </div>
 
             {/* reset button */}
             <div className="button reset">
-              <button type="button" className="btn btn-light">Reset</button>
+              
+              <button
+                type="button"
+                className="btn btn-light"
+                style={{ padding: "0", color: "#0834bd", fontWeight: "600" }}
+                onClick={(e) => handleSearch("")}
+              >
+                <i
+                className="bi bi-arrow-counterclockwise"
+                style={{ color: "#0834bd" }}
+              ></i>
+                Reset
+              </button>
             </div>
 
             <div className="actions">
               {/* search */}
-              <label className="search" htmlFor="search">Search:</label>
-              <input type="text" className="searchInput" id="search" onChange={(e) =>{
-                handleSearch(e.target.value);
-              }}/>
+              <label className="search" htmlFor="search">
+                Search:
+              </label>
+              <input
+                type="text"
+                className="searchInput"
+                id="search"
+                onChange={(e) => {
+                  handleSearch(e.target.value, "name");
+                }}
+              />
 
               {/* add to cart button */}
-              <button type="button" className="btn btn-primary">Add To Cart</button>
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ padding: "2px", borderRadius: "0", width: "108px", margin: "15px" }}
+              >
+                Add To Cart
+              </button>
             </div>
             {/* <span class="navbar-brand mb-0 h1">Navbar</span> */}
           </div>
