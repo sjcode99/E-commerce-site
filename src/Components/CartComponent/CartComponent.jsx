@@ -6,7 +6,6 @@ function CartComponent({ productInCart }) {
 
     const getTotal = function () {
       let total =   productListInCart.reduce((previous, current) => previous + current.qtyToPurchase * current.price , 0);
-      console.log(total.toFixed(2));
       return total.toFixed(2)
     }
 

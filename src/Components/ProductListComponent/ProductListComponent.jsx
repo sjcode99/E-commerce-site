@@ -1,40 +1,34 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 import "./ProductListComponent.css";
 
-function ProductListComponent({ products, itemsInCart, addMultipleItems }) {
-  const history = useHistory();
-  const [productList, setProductList] = useState(products);
-  // const [productList, setProductList]= useState([...products]);
-  // const [value, setValue] = useState(0);
-  // const [isChecked, setIsChecked] = useState(false)
+function ProductListComponent({ products, itemsInCart }) {
 
   const handleInputValue = (val, item) => {
-    console.log(item);
-    let updatedProductList = productList.map((data) =>
-      data.id === item.id ? { ...data, qtyToPurchase: val } : data
-    );
-    setProductList(updatedProductList);
-    // setValue(val);
+
+    products.forEach(element => {
+      if (element.id === item.id) {
+        element.qtyToPurchase = val;
+        return;
+
+      }
+    })
   };
-  // console.log(typeof(itemsId));
 
   const addToCart = (product) => {
     itemsInCart(product);
     console.log(product);
-    // history.push('/cart')
   };
 
   const handleMultipleSelect = (checkVal, item) => {
-    // let updatedProductLists = productList.map((data) =>
-    //   data.id === item.id ? { ...data, isSelected: checkVal } : data
-    // );
-    // console.log(updatedProductList);
-    setProductList((prev) => ([...prev.map((data) =>
-    data.id === item.id ? { ...data, isSelected: checkVal } : data
-  )]));
-    // addMultipleItems((prev) => ([...productList]));
-    console.log(productList);
+
+    products.forEach(element => {
+      if (element.id === item.id) {
+        element.isSelected = checkVal;
+        return;
+
+      }
+    })
+
   };
 
   return (
@@ -53,7 +47,7 @@ function ProductListComponent({ products, itemsInCart, addMultipleItems }) {
             </tr>
           </thead>
           <tbody>
-            {productList.map((item, key) => (
+            {products.map((item, key) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>

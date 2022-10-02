@@ -1,14 +1,20 @@
 import React from "react";
 import "./HeaderComponent.css";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
-function HeaderComponent({ handleSearch, importedJsonData }) {
+function HeaderComponent({ handleSearch, importedJsonData, addProductInCart }) {
+  const history = useHistory();
+
   const uniqueCategoryVal = [
     ...new Set(importedJsonData.map((value) => value.category)),
   ];
   const uniqueSizeVal = [
     ...new Set(importedJsonData.map((value) => value.size)),
   ];
+
+  const goToCart = () => {
+    history.push('/cart')
+  }
   // console.log(uniqueVal);
   return (
     <>
@@ -124,12 +130,12 @@ function HeaderComponent({ handleSearch, importedJsonData }) {
               <button
                 type="button"
                 className="btn btn-primary action-buttons"
-                
+                onClick={ () => addProductInCart()}
               >
                 Add To Cart
               </button>
                 <Link to="/cart">
-              <button  type="button" className="btn btn-primary  action-buttons">
+              <button onClick={goToCart}  type="button" className="btn btn-primary  action-buttons">
                 Go to Cart
               </button>
               </Link>

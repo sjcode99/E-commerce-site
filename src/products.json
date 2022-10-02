@@ -8,7 +8,8 @@
         "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
         "color": "pink",
         "count": "0",
-        "size": "s"
+        "size": "s",
+        "value": ""
     },
     {
         "id": "2",
@@ -19,7 +20,8 @@
         "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
         "color": "yellow",
         "count": "259",
-        "size": "m"
+        "size": "m",
+        "value": ""
     },
     {
         "id": "3",
@@ -30,7 +32,8 @@
         "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
         "color": "red",
         "count": "500",
-        "size": "l"
+        "size": "l",
+        "value": ""
     },
     {
         "id": "4",
@@ -41,7 +44,8 @@
         "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
         "color": "blue",
         "count": "430",
-        "size": "xl"
+        "size": "xl",
+        "value": ""
     },
     {
         "id": "5",
@@ -52,7 +56,8 @@
         "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
         "color": "green",
         "count": "400",
-        "size": "xxl"
+        "size": "xxl",
+        "value": ""
     },
     {
         "id": "6",
@@ -63,7 +68,8 @@
         "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
         "color": "white",
         "count": "70",
-        "size": "s"
+        "size": "s",
+        "value": ""
     },
     {
         "id": "7",
@@ -74,7 +80,8 @@
         "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
         "color": "black",
         "count": "400",
-        "size": "m"
+        "size": "m",
+        "value": ""
     },
     {
         "id": "8",
@@ -85,7 +92,8 @@
         "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
         "color": "pink",
         "count": "100",
-        "size": "l"
+        "size": "l",
+        "value": ""
     },
     {
         "id": "9",
@@ -96,7 +104,8 @@
         "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
         "color": "yellow",
         "count": "203",
-        "size": "xl"
+        "size": "xl",
+        "value": ""
     },
     {
         "id": "10",
@@ -107,7 +116,8 @@
         "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
         "color": "red",
         "count": "470",
-        "size": "xxl"
+        "size": "xxl",
+        "value": ""
     },
     {
         "id": "11",
@@ -118,7 +128,8 @@
         "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
         "color": "blue",
         "count": "319",
-        "size": "s"
+        "size": "s",
+        "value": ""
     },
     {
         "id": "12",
@@ -129,7 +140,8 @@
         "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
         "color": "green",
         "count": "400",
-        "size": "m"
+        "size": "m",
+        "value": ""
     },
     {
         "id": "13",
@@ -140,7 +152,8 @@
         "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
         "color": "white",
         "count": "250",
-        "size": "l"
+        "size": "l",
+        "value": ""
     },
     {
         "id": "14",
@@ -151,7 +164,8 @@
         "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
         "color": "black",
         "count": "140",
-        "size": "xl"
+        "size": "xl",
+        "value": ""
     },
     {
         "id": "15",
@@ -162,7 +176,8 @@
         "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
         "color": "pink",
         "count": "235",
-        "size": "xxl"
+        "size": "xxl",
+        "value": ""
     },
     {
         "id": "16",
@@ -173,7 +188,8 @@
         "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
         "color": "yellow",
         "count": "340",
-        "size": "s"
+        "size": "s",
+        "value": ""
     },
     {
         "id": "17",
@@ -184,7 +200,8 @@
         "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
         "color": "red",
         "count": "679",
-        "size": "m"
+        "size": "m",
+        "value": ""
     },
     {
         "id": "18",
@@ -195,7 +212,8 @@
         "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
         "color": "blue",
         "count": "130",
-        "size": "l"
+        "size": "l",
+        "value": ""
     },
     {
         "id": "19",
@@ -206,7 +224,8 @@
         "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
         "color": "green",
         "count": "146",
-        "size": "xl"
+        "size": "xl",
+        "value": ""
     },
     {
         "id": "20",
@@ -217,6 +236,7 @@
         "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
         "color": "white",
         "count": "145",
-        "size": "xxl"
+        "size": "xxl",
+        "value": ""
     }
 ]
