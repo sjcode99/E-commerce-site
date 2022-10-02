@@ -1,11 +1,45 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./ProductListComponent.css";
 
-function ProductListComponent({ products}) {
-  // console.log(products);
+function ProductListComponent({ products, itemsInCart, addMultipleItems }) {
+  const history = useHistory();
+  const [productList, setProductList] = useState(products);
+  // const [productList, setProductList]= useState([...products]);
+  // const [value, setValue] = useState(0);
+  // const [isChecked, setIsChecked] = useState(false)
+
+  const handleInputValue = (val, item) => {
+    console.log(item);
+    let updatedProductList = productList.map((data) =>
+      data.id === item.id ? { ...data, qtyToPurchase: val } : data
+    );
+    setProductList(updatedProductList);
+    // setValue(val);
+  };
+  // console.log(typeof(itemsId));
+
+  const addToCart = (product) => {
+    itemsInCart(product);
+    console.log(product);
+    // history.push('/cart')
+  };
+
+  const handleMultipleSelect = (checkVal, item) => {
+    // let updatedProductLists = productList.map((data) =>
+    //   data.id === item.id ? { ...data, isSelected: checkVal } : data
+    // );
+    // console.log(updatedProductList);
+    setProductList((prev) => ([...prev.map((data) =>
+    data.id === item.id ? { ...data, isSelected: checkVal } : data
+  )]));
+    // addMultipleItems((prev) => ([...productList]));
+    console.log(productList);
+  };
+
   return (
     <>
-      <div className='container'>
+      <div className="container">
         <table className="table table-hover list-table">
           <thead>
             <tr>
@@ -19,21 +53,51 @@ function ProductListComponent({ products}) {
             </tr>
           </thead>
           <tbody>
-            {products
-            .map((item, key) => (
+            {productList.map((item, key) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
-                <td> <img width="50" height="50" src={item.image}  /> </td>
+                <td>
+                  <img width="50" height="50" src={item.image} />{" "}
+                </td>
                 <td>{item.name}</td>
                 <td>{item.color}</td>
-                <td>{item.count > 0 ? <i className="bi bi-emoji-smile-fill"></i> : <i className="bi bi-emoji-frown-fill"></i>}</td>
+                <td>
+                  {item.count > 0 ? (
+                    <i className="bi bi-emoji-smile-fill"></i>
+                  ) : (
+                    <i className="bi bi-emoji-frown-fill"></i>
+                  )}
+                </td>
                 <td>{item.price}</td>
-                <td style={{width: '200px'}}>
+                <td style={{ width: "200px" }}>
                   <div className="buy-actions">
-                    <input style={{width: '60px'}} type="number" min="0" name="" id="" />
-                    <i className="bi bi-cart "></i>
-                    <input type="checkbox" name="" id="" />
-
+                    <input
+                      style={{ width: "60px" }}
+                      type="number"
+                      min="0"
+                      name="quantity"
+                      id="quantity"
+                      // value={value}
+                      onChange={(e) => {
+                        // console.log(e.target.id);
+                        handleInputValue(e.target.value, item);
+                      }}
+                    />
+                    <i
+                      onClick={() => addToCart(item)}
+                      className="bi bi-cart"
+                      type="button"
+                    ></i>
+                    <input
+                      type="checkbox"
+                      name={item.id}
+                      id={item.id}
+                      // value= {item.id}
+                      onChange={(e) => {
+                        // console.log(e);
+                        handleMultipleSelect(e.target.checked, item);
+                      }}
+                    />
                   </div>
                 </td>
               </tr>
@@ -42,7 +106,7 @@ function ProductListComponent({ products}) {
         </table>
       </div>
     </>
-  )
+  );
 }
 
-export default ProductListComponent
+export default ProductListComponent;
