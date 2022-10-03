@@ -67,46 +67,22 @@ function HeaderComponent({ handleSearch, importedJsonData, addProductInCart }) {
                   </option>
                 ))}
               </select>
-
-              {/* <button
-                className="btn dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Size
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <button className="dropdown-item" type="button">
-                    Action
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" type="button">
-                    Another action
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" type="button">
-                    Something else here
-                  </button>
-                </li>
-              </ul> */}
             </div>
 
             {/* reset button */}
             <div className="button reset">
-
               <button
                 type="button"
-                className="btn btn-light"
-                style={{ padding: "0", color: "#0834bd", fontWeight: "600" }}
-                onClick={(e) => handleSearch("")}
+                className="btn"
+                // style={{ padding: "0", color: "#2EB3CF", fontWeight: "600" }}
+                onClick={(e) => {
+                  handleSearch("");
+                  window.location.reload(false);
+              }}
               >
                 <i
                   className="bi bi-arrow-counterclockwise"
-                  style={{ color: "#0834bd" }}
+                  // style={{ color: "#0834bd" }}
                 ></i>
                 Reset
               </button>
@@ -129,13 +105,13 @@ function HeaderComponent({ handleSearch, importedJsonData, addProductInCart }) {
               {/* add to cart button */}
               <button
                 type="button"
-                className="btn btn-primary action-buttons"
+                className="btn action-buttons"
                 onClick={ () => addProductInCart()}
               >
                 Add To Cart
               </button>
                 <Link to="/cart">
-              <button onClick={goToCart}  type="button" className="btn btn-primary  action-buttons">
+              <button onClick={goToCart}  type="button" className="btn action-buttons">
                 Go to Cart
               </button>
               </Link>

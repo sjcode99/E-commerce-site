@@ -18,9 +18,31 @@
   align-items: center;
   padding: 2px;
 }
+.reset> .btn, .reset> .btn:hover{
+  padding: 0;
+  color: #2EB3CF;
+  font-weight: 600;
+}
+.reset> .btn:active{
+  border: 0;
+  color: #2EB3CF;
+  background-color: #F8F9FA;
+}
 .action-buttons {
   padding: 2px;
   border-radius: 0;
   width: 108px;
   margin: 15px;
+  background-color: #00A0C6;
+  color: white;
+}
+.actions .action-buttons:hover{
+  background-color: #00A0C6;
+  color: white;
+
+}
+ .form-select:focus{
+  border-color: #86b7fe ;
+  outline: 0 ;
+  box-shadow: none ;
 }

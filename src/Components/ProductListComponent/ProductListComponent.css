@@ -11,3 +11,9 @@
 .list-table{
     vertical-align: 0;
 }
+.list-table>thead{
+    border-bottom: 2px solid black;
+}
+.list-table th,td{
+    padding: 0 25px;
+}
